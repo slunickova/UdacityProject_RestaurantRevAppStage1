@@ -75,7 +75,9 @@ nav h1 a {
     background-color: #eee;
     font-size: 17px;
     margin: 0;
-    width: calc(50% - 80px);
+		text-align: center;
+		max-width: 100%;
+
 }
 
 /* Display list items side by side */
@@ -116,6 +118,14 @@ nav h1 a {
   height: 50px;
   background-color: #3397DB;
   align-items: center;
+}
+@media screen and (max-width: 430px) {
+	.filter-options {
+		flex-direction: column;
+		height: auto;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
 }
 .filter-options h2 {
   color: white;
@@ -200,11 +210,6 @@ nav h1 a {
   top: 0;
   width: 100%;
   z-index: 1000;
-}
-.inside #maincontent {
-	max-width: 100%;
-	display: flex;
-	flex-direction: column;
 }
 .inside #map-container {
   background: blue none repeat scroll 0 0;
