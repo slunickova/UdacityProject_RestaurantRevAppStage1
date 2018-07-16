@@ -184,7 +184,7 @@ createRestaurantHTML = (restaurant) => {
   return li
 }
 
-/**
+/*
  * Add markers for current restaurants to the map.
  */
 addMarkersToMap = (restaurants = self.restaurants) => {
@@ -209,3 +209,22 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 } */
+
+/*
+ * Add Service Worker to the App.
+ */
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register('js/sw/sw.js')
+  .then((reg) => {
+    if(reg.installing) {
+      console.log('Service Worker Installing');
+    } else if(reg.waiting) {
+      console.log('Service Worker Installed');
+    } else if(reg.active) {
+      console.log('Service Worker Active');
+    }
+    console.log('Registration Succeeded. Scope is ' + reg.scope);
+  }).catch((error) => {
+    console.log('Registration Failled with ' + error);
+  });
+}
