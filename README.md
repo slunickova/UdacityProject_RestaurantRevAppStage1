@@ -6,6 +6,8 @@ For the **Restaurant Reviews** projects, I converted a static webpage to a mobil
 ## Live preview
 You can see a preview of the game on a page below:
 
+https://slunickova.github.io/UdacityProject_RestaurantRevAppStage1/
+
 ## Contributing
 This repository is the project made as a part of Front-End Web Developer Nanodegree Program by Udacity. Therefore, I most likely will not accept pull requests.
 
