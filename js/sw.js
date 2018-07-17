@@ -1,4 +1,4 @@
-let staticCacheName = 'restaurant-cache-1';
+var staticCacheName = 'cache-1';
 
 var urls = [
   '/',
@@ -46,11 +46,11 @@ self.addEventListener('fetch', function(event) {
 //updating the cache name
 self.addEventListener('activate', function(event) {
   event.waitUntil(
-    caches.keys().then(function(staticCacheNames) {
+    caches.keys().then(function(cacheNames) {
       return Promise.all(
-        cacheNames.map(function(thisCacheName) {
-          if(cacheList.indexOf(cacheName)=== -1) {
-            return caches.delete(thisCacheName);
+        cacheNames.map(function(cacheName) {
+          if(cacheName !== staticCacheName) {
+            return caches.delete(cacheName);
           }
         })
       );
