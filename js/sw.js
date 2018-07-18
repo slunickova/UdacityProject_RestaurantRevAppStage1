@@ -33,6 +33,7 @@ self.addEventListener('install', function(event) {
 //fetch the data
 self.addEventListener('fetch', function(event) {
   event.respondWith(
+    //ignoreSearch to ignore the query in html
     caches.match(event.request, {ignoreSearch: true}).then(function(response) {
       if(response) {
         console.log('it response');
